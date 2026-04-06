@@ -1,0 +1,9 @@
+fastapi==0.111.0
+uvicorn[standard]==0.29.0
+python-multipart==0.0.9
+pefile==2023.2.7
+pyelftools==0.31
+yara-python==4.5.0
+scikit-learn==1.4.2
+numpy==1.26.4
+joblib==1.4.2
