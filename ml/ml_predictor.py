@@ -24,12 +24,31 @@ def _load():
     global _model, _scaler, _loaded
     if _loaded:
         return
+    
+    # Debug: Log paths for troubleshooting
+    import sys
+    print(f"[DEBUG] PROJECT_ROOT: {PROJECT_ROOT}", file=sys.stderr)
+    print(f"[DEBUG] MODEL_PATH: {MODEL_PATH}", file=sys.stderr)
+    print(f"[DEBUG] MODEL_PATH exists: {os.path.exists(MODEL_PATH)}", file=sys.stderr)
+    print(f"[DEBUG] SCALER_PATH: {SCALER_PATH}", file=sys.stderr)
+    print(f"[DEBUG] SCALER_PATH exists: {os.path.exists(SCALER_PATH)}", file=sys.stderr)
+    
     if os.path.exists(MODEL_PATH):
-        with open(MODEL_PATH, "rb") as fh:
-            _model = pickle.load(fh)
+        try:
+            with open(MODEL_PATH, "rb") as fh:
+                _model = pickle.load(fh)
+            print(f"[DEBUG] Model loaded successfully", file=sys.stderr)
+        except Exception as e:
+            print(f"[DEBUG] Error loading model: {e}", file=sys.stderr)
+    
     if os.path.exists(SCALER_PATH):
-        with open(SCALER_PATH, "rb") as fh:
-            _scaler = pickle.load(fh)
+        try:
+            with open(SCALER_PATH, "rb") as fh:
+                _scaler = pickle.load(fh)
+            print(f"[DEBUG] Scaler loaded successfully", file=sys.stderr)
+        except Exception as e:
+            print(f"[DEBUG] Error loading scaler: {e}", file=sys.stderr)
+    
     _loaded = True
 
 
