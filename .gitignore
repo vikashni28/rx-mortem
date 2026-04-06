@@ -36,10 +36,8 @@ ml/dataset/Win64_train/
 ml/dataset/Win64_test/
 ml/dataset/sample_dataset.csv
 
-# Model files (optional - comment out to include)
-ml/model/rf_model.pkl
-ml/model/scaler.pkl
-ml/model/model_info.json
+# Model files
+ml/model/*.pkl
 
 # Environment variables
 .env
