@@ -4,7 +4,7 @@
   "outputDirectory": "frontend",
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/(?!.*\\.)",
       "dest": "/rx-mortem.html"
     }
   ]
