@@ -3,17 +3,6 @@
   "public": true,
   "buildCommand": "echo 'Static frontend'",
   "outputDirectory": "frontend",
-  "env": {
-    "REACT_APP_API_URL": "@api_url"
-  },
-  "envs": {
-    "production": {
-      "REACT_APP_API_URL": "https://rx-mortem-api.onrender.com"
-    },
-    "preview": {
-      "REACT_APP_API_URL": "https://rx-mortem-api.onrender.com"
-    }
-  },
   "routes": [
     {
       "src": "/(.*)",
