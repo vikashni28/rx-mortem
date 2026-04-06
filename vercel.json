@@ -1,7 +1,6 @@
 {
   "version": 2,
   "public": true,
-  "buildCommand": "echo 'Static frontend'",
   "outputDirectory": "frontend",
   "routes": [
     {
