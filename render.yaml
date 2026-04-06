@@ -1,11 +1,10 @@
 services:
   - type: web
     name: rx-mortem-api
-    runtime: python3.11
-    buildCommand: pip install -r requirements.txt
+    runtime: python-3.11
+    pythonVersion: 3.11
+    buildCommand: pip install --upgrade pip setuptools && pip install -r requirements.txt
     startCommand: python -m uvicorn backend.main:app --host 0.0.0.0 --port $PORT
     envVars:
-      - key: PYTHON_VERSION
-        value: 3.11
       - key: PYTHONUNBUFFERED
         value: "1"
