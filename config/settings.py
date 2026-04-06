@@ -54,8 +54,8 @@ VERDICT_SUSPICIOUS_THRESHOLD = 35   # score >= 35  → Suspicious
                                      # score <  35  → Benign
 
 # ── Random Forest hyperparameters ─────────────────────────────────────────────
-RF_N_ESTIMATORS = 300
-RF_MAX_DEPTH    = 20
+RF_N_ESTIMATORS = 100
+RF_MAX_DEPTH    = 12
 RF_RANDOM_STATE = 42
 RF_N_JOBS       = -1           # use all CPU cores
 RF_CLASS_WEIGHT = "balanced"

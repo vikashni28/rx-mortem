@@ -1,0 +1,52 @@
+{
+  "trained_at": "2026-04-06T09:06:03.847296Z",
+  "train": "D:\\rx-mortem-v2\\ml\\dataset\\Win64_train",
+  "test": "D:\\rx-mortem-v2\\ml\\dataset\\Win64_test",
+  "train_samples": 1040000,
+  "test_samples": 240000,
+  "feature_columns": [
+    "file_size",
+    "entropy",
+    "num_sections",
+    "imports_count",
+    "suspicious_strings_count"
+  ],
+  "column_mapping": {
+    "file_size": "file_size",
+    "entropy": "entropy",
+    "num_sections": "num_sections",
+    "imports_count": "imports_count",
+    "suspicious_strings_count": "suspicious_strings_count",
+    "label": "label"
+  },
+  "hyperparameters": {
+    "n_estimators": 100,
+    "max_depth": 12,
+    "random_state": 42,
+    "class_weight": "balanced"
+  },
+  "metrics": {
+    "accuracy": 0.8768,
+    "precision": 0.9482,
+    "recall": 0.7971,
+    "f1_score": 0.8661,
+    "roc_auc": 0.9595
+  },
+  "confusion_matrix": [
+    [
+      114774,
+      5226
+    ],
+    [
+      24348,
+      95652
+    ]
+  ],
+  "feature_importances": {
+    "file_size": 0.190508,
+    "entropy": 0.330633,
+    "num_sections": 0.117786,
+    "imports_count": 0.26267,
+    "suspicious_strings_count": 0.098402
+  }
+}
