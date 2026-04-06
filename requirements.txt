@@ -4,7 +4,7 @@ python-multipart==0.0.9
 pefile==2023.2.7
 pyelftools==0.31
 yara-python==4.5.0
-scikit-learn==1.4.2
+scikit-learn==1.5.1
 numpy==1.26.4
-pandas==2.2.0
 joblib==1.4.2
+pandas==2.2.0
