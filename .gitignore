@@ -36,8 +36,8 @@ ml/dataset/Win64_train/
 ml/dataset/Win64_test/
 ml/dataset/sample_dataset.csv
 
-# Model files
-ml/model/*.pkl
+# Model files (keep .pkl files for deployment - git tracks them now)
+# ml/model/*.pkl
 
 # Environment variables
 .env
