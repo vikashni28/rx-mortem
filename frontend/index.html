@@ -881,7 +881,7 @@ const { useState, useRef, useEffect, useCallback } = React;
 // Uses environment variable if available, otherwise defaults to localhost
 const API_DEFAULT = window.location.hostname === 'localhost' 
   ? "http://localhost:8000"
-  : (window.__REACT_APP_API_URL__ || "https://rx-mortem-api.onrender.com");
+  : (window.__REACT_APP_API_URL__ || "https://rx-mortem.onrender.com");
 
 function formatBytes(b) {
   if (b < 1024) return `${b} B`;
