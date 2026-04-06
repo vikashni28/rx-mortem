@@ -6,6 +6,7 @@ Falls back to heuristic scorer if model files are absent.
 
 import os, pickle, sys
 from typing import Any, Dict
+import joblib
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
@@ -35,16 +36,14 @@ def _load():
     
     if os.path.exists(MODEL_PATH):
         try:
-            with open(MODEL_PATH, "rb") as fh:
-                _model = pickle.load(fh)
+            _model = joblib.load(MODEL_PATH)
             print(f"[DEBUG] Model loaded successfully", file=sys.stderr)
         except Exception as e:
             print(f"[DEBUG] Error loading model: {e}", file=sys.stderr)
     
     if os.path.exists(SCALER_PATH):
         try:
-            with open(SCALER_PATH, "rb") as fh:
-                _scaler = pickle.load(fh)
+            _scaler = joblib.load(SCALER_PATH)
             print(f"[DEBUG] Scaler loaded successfully", file=sys.stderr)
         except Exception as e:
             print(f"[DEBUG] Error loading scaler: {e}", file=sys.stderr)

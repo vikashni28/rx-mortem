@@ -21,6 +21,7 @@ Run from project root:
 import argparse, json, os, pickle, sys
 from datetime import datetime
 import numpy as np
+import joblib
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if PROJECT_ROOT not in sys.path:
@@ -193,8 +194,8 @@ def train(train_path, test_path=None):
         print(f"    {feat:<34} {imp:.4f}  {bar}")
 
     os.makedirs(MODEL_DIR, exist_ok=True)
-    with open(MODEL_PATH,  "wb") as fh: pickle.dump(model,  fh, protocol=pickle.HIGHEST_PROTOCOL)
-    with open(SCALER_PATH, "wb") as fh: pickle.dump(scaler, fh, protocol=pickle.HIGHEST_PROTOCOL)
+    joblib.dump(model,  MODEL_PATH,  compress=3)
+    joblib.dump(scaler, SCALER_PATH, compress=3)
 
     info = {
         "trained_at":      datetime.utcnow().isoformat() + "Z",
